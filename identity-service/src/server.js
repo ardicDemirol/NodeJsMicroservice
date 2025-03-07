@@ -9,7 +9,6 @@ const Redis = require("ioredis");
 const { rateLimit } = require("express-rate-limit");
 const { RedisStore } = require("rate-limit-redis");
 const routes = require("./routes/identity-service");
-const { Logger } = require("winston");
 const errorHandler  = require("./middleware/error-handler")
 
 const app = express();
@@ -20,7 +19,7 @@ mongoose
     .then(() => logger.info("Connected to mongoDB"))
     .catch(e => logger.error("Mongo Connection Error", e));
 
-const rediClient = new Redis(process.env.REDIS_URL);
+const redisClient = new Redis(process.env.REDIS_URL);
 
 app.use(helmet());
 app.use(cors());
@@ -33,7 +32,7 @@ app.use((req, res, next) => {
 });
 
 const rateLimiter = new RateLimiterRedis({
-    storeClient: rediClient,
+    storeClient: redisClient,
     keyPrefix: "middleware",
     points: 5,
     duration: 1 // second
@@ -56,7 +55,7 @@ const sensitiveEndpointsLimiter = rateLimit({
         res.status(429).json({ success: false, message: "Too many requests" });
     },
     store: new RedisStore({
-        sendCommand: (...args) => rediClient.call(...args),
+        sendCommand: (...args) => redisClient.call(...args),
     }),
 });
 

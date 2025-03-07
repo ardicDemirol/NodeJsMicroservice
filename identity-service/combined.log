@@ -1,62 +1,51 @@
-{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-06T14:56:29.686Z"}
-{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-06T14:56:31.903Z"}
-{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-06T15:03:09.253Z"}
-{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-06T15:03:11.976Z"}
-{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-06T15:05:23.983Z"}
-{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-06T15:05:26.819Z"}
-{"level":"info","message":"Received POST request to /api/auth/register","service":"identity-service","timestamp":"2025-03-06T15:05:29.809Z"}
-{"level":"info","message":"Request body, [object Object]","service":"identity-service","timestamp":"2025-03-06T15:05:29.810Z"}
-{"level":"info","message":"Registration endpoint hit...","service":"identity-service","timestamp":"2025-03-06T15:05:29.818Z"}
-{"level":"warn","message":"User already exists","service":"identity-service","timestamp":"2025-03-06T15:05:30.052Z"}
-{"level":"error","message":"Registration error occurred Cannot read properties of undefined (reading 'details')","service":"identity-service","stack":"TypeError: Cannot read properties of undefined (reading 'details')\n    at registerUser (C:\\Users\\demro\\Desktop\\Coding\\JavaScript\\New\\Social-Media-Microservices\\identity-service\\src\\controllers\\identity-controller.js:24:33)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-03-06T15:05:30.053Z"}
-{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-06T15:06:56.455Z"}
-{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-06T15:06:58.735Z"}
-{"level":"info","message":"Received POST request to /api/auth/register","service":"identity-service","timestamp":"2025-03-06T15:06:59.299Z"}
-{"level":"info","message":"Request body, [object Object]","service":"identity-service","timestamp":"2025-03-06T15:06:59.299Z"}
-{"level":"info","message":"Registration endpoint hit...","service":"identity-service","timestamp":"2025-03-06T15:06:59.306Z"}
-{"level":"warn","message":"User already exists","service":"identity-service","timestamp":"2025-03-06T15:07:00.614Z"}
-{"level":"error","message":"Registration error occurreddd Cannot read properties of undefined (reading 'details')","service":"identity-service","stack":"TypeError: Cannot read properties of undefined (reading 'details')\n    at registerUser (C:\\Users\\demro\\Desktop\\Coding\\JavaScript\\New\\Social-Media-Microservices\\identity-service\\src\\controllers\\identity-controller.js:24:33)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-03-06T15:07:00.615Z"}
-{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-06T15:07:15.226Z"}
-{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-06T15:07:17.306Z"}
-{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-06T15:10:25.801Z"}
-{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-06T15:10:28.135Z"}
-{"level":"info","message":"Received POST request to /api/auth/register","service":"identity-service","timestamp":"2025-03-06T15:10:33.159Z"}
-{"level":"info","message":"Request body, [object Object]","service":"identity-service","timestamp":"2025-03-06T15:10:33.160Z"}
-{"level":"info","message":"Registration endpoint hit...","service":"identity-service","timestamp":"2025-03-06T15:10:33.165Z"}
-{"level":"warn","message":"User already exists","service":"identity-service","timestamp":"2025-03-06T15:10:33.368Z"}
-{"level":"error","message":"Registration error occurred Cannot read properties of undefined (reading 'details')","service":"identity-service","stack":"TypeError: Cannot read properties of undefined (reading 'details')\n    at registerUser (C:\\Users\\demro\\Desktop\\Coding\\JavaScript\\New\\Social-Media-Microservices\\identity-service\\src\\controllers\\identity-controller.js:24:33)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-03-06T15:10:33.369Z"}
-{"level":"info","message":"Received POST request to /api/auth/register","service":"identity-service","timestamp":"2025-03-06T15:10:38.336Z"}
-{"level":"info","message":"Request body, [object Object]","service":"identity-service","timestamp":"2025-03-06T15:10:38.337Z"}
-{"level":"info","message":"Registration endpoint hit...","service":"identity-service","timestamp":"2025-03-06T15:10:38.341Z"}
-{"buffer":{"data":[103,201,186,238,112,211,135,142,34,200,21,14],"type":"Buffer"},"level":"warn","message":"User saved successfully","service":"identity-service","timestamp":"2025-03-06T15:10:38.822Z"}
-{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-06T15:11:47.004Z"}
-{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-06T15:11:49.183Z"}
-{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-06T15:13:20.255Z"}
-{"level":"info","message":"Received POST request to /api/auth/register","service":"identity-service","timestamp":"2025-03-06T15:13:23.661Z"}
-{"level":"info","message":"Request body, [object Object]","service":"identity-service","timestamp":"2025-03-06T15:13:23.661Z"}
-{"level":"info","message":"Registration endpoint hit...","service":"identity-service","timestamp":"2025-03-06T15:13:23.667Z"}
-{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-06T15:13:24.836Z"}
-{"level":"warn","message":"User already exists","service":"identity-service","timestamp":"2025-03-06T15:13:25.067Z"}
-{"level":"error","message":"Registration error occurred Cannot read properties of undefined (reading 'details')","service":"identity-service","stack":"TypeError: Cannot read properties of undefined (reading 'details')\n    at registerUser (C:\\Users\\demro\\Desktop\\Coding\\JavaScript\\New\\Social-Media-Microservices\\identity-service\\src\\controllers\\identity-controller.js:24:33)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-03-06T15:13:25.068Z"}
-{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-06T15:16:13.319Z"}
-{"level":"info","message":"Received POST request to /api/auth/register","service":"identity-service","timestamp":"2025-03-06T15:16:15.101Z"}
-{"level":"info","message":"Request body, [object Object]","service":"identity-service","timestamp":"2025-03-06T15:16:15.102Z"}
-{"level":"info","message":"Registration endpoint hit...","service":"identity-service","timestamp":"2025-03-06T15:16:15.108Z"}
-{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-06T15:16:23.501Z"}
-{"level":"warn","message":"User already exists","service":"identity-service","timestamp":"2025-03-06T15:16:24.107Z"}
-{"level":"info","message":"Received POST request to /api/auth/register","service":"identity-service","timestamp":"2025-03-06T15:16:34.575Z"}
-{"level":"info","message":"Request body, [object Object]","service":"identity-service","timestamp":"2025-03-06T15:16:34.575Z"}
-{"level":"info","message":"Registration endpoint hit...","service":"identity-service","timestamp":"2025-03-06T15:16:34.579Z"}
-{"buffer":{"data":[103,201,188,83,13,28,113,109,119,240,240,0],"type":"Buffer"},"level":"info","message":"User saved successfully","service":"identity-service","timestamp":"2025-03-06T15:16:35.837Z"}
-{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-06T15:17:52.122Z"}
-{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-06T15:17:54.337Z"}
-{"level":"info","message":"Received POST request to /api/auth/register","service":"identity-service","timestamp":"2025-03-06T15:17:58.532Z"}
-{"level":"info","message":"Request body, [object Object]","service":"identity-service","timestamp":"2025-03-06T15:17:58.533Z"}
-{"level":"info","message":"Registration endpoint hit...","service":"identity-service","timestamp":"2025-03-06T15:17:58.538Z"}
-{"buffer":{"data":[103,201,188,166,162,222,82,52,155,251,20,85],"type":"Buffer"},"level":"info","message":"User saved successfully","service":"identity-service","timestamp":"2025-03-06T15:17:59.018Z"}
-{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-06T15:33:13.558Z"}
-{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-06T15:33:15.558Z"}
-{"level":"info","message":"Received POST request to /api/auth/register","service":"identity-service","timestamp":"2025-03-06T15:33:21.036Z"}
-{"level":"info","message":"Request body, [object Object]","service":"identity-service","timestamp":"2025-03-06T15:33:21.036Z"}
-{"level":"info","message":"Registration endpoint hit...","service":"identity-service","timestamp":"2025-03-06T15:33:21.042Z"}
-{"0":"\"","1":"u","10":" ","11":"l","12":"e","13":"n","14":"g","15":"t","16":"h","17":" ","18":"m","19":"u","2":"s","20":"s","21":"t","22":" ","23":"b","24":"e","25":" ","26":"a","27":"t","28":" ","29":"l","3":"e","30":"e","31":"a","32":"s","33":"t","34":" ","35":"3","36":" ","37":"c","38":"h","39":"a","4":"r","40":"r","41":"a","42":"c","43":"t","44":"e","45":"r","46":"s","47":" ","48":"l","49":"o","5":"n","50":"n","51":"g","6":"a","7":"m","8":"e","9":"\"","level":"warn","message":"Validation Error","service":"identity-service","timestamp":"2025-03-06T15:33:21.049Z"}
+{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-07T12:12:53.536Z"}
+{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-07T12:12:55.672Z"}
+{"level":"info","message":"Received GET request to /","service":"identity-service","timestamp":"2025-03-07T12:13:04.581Z"}
+{"level":"info","message":"Request body, [object Object]","service":"identity-service","timestamp":"2025-03-07T12:13:04.581Z"}
+{"level":"info","message":"Received POST request to /api/auth/register","service":"identity-service","timestamp":"2025-03-07T12:13:19.550Z"}
+{"level":"info","message":"Request body, [object Object]","service":"identity-service","timestamp":"2025-03-07T12:13:19.550Z"}
+{"level":"info","message":"Registration endpoint hit...","service":"identity-service","timestamp":"2025-03-07T12:13:19.555Z"}
+{"buffer":{"data":[103,202,226,223,108,2,122,149,137,251,16,216],"type":"Buffer"},"level":"info","message":"User saved successfully","service":"identity-service","timestamp":"2025-03-07T12:13:20.034Z"}
+{"level":"info","message":"Received GET request to /","service":"identity-service","timestamp":"2025-03-07T12:13:48.108Z"}
+{"level":"info","message":"Request body, [object Object]","service":"identity-service","timestamp":"2025-03-07T12:13:48.108Z"}
+{"level":"info","message":"Received POST request to /api/auth/register","service":"identity-service","timestamp":"2025-03-07T12:16:43.019Z"}
+{"level":"info","message":"Request body, [object Object]","service":"identity-service","timestamp":"2025-03-07T12:16:43.019Z"}
+{"level":"info","message":"Registration endpoint hit...","service":"identity-service","timestamp":"2025-03-07T12:16:43.022Z"}
+{"level":"warn","message":"User already exists","service":"identity-service","timestamp":"2025-03-07T12:16:43.235Z"}
+{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-07T12:17:21.056Z"}
+{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-07T12:17:23.074Z"}
+{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-07T12:21:21.809Z"}
+{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-07T12:21:23.841Z"}
+{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-07T12:22:41.438Z"}
+{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-07T12:22:43.637Z"}
+{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-07T12:26:17.555Z"}
+{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-07T12:26:19.686Z"}
+{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-07T12:27:39.020Z"}
+{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-07T12:27:41.039Z"}
+{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-07T12:27:50.547Z"}
+{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-07T12:27:52.363Z"}
+{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-07T12:28:47.665Z"}
+{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-07T12:28:49.760Z"}
+{"level":"info","message":"Received POST request to /api/auth/login","service":"identity-service","timestamp":"2025-03-07T12:30:33.696Z"}
+{"level":"info","message":"Request body, [object Object]","service":"identity-service","timestamp":"2025-03-07T12:30:33.697Z"}
+{"level":"info","message":"Login endpoint hit...","service":"identity-service","timestamp":"2025-03-07T12:30:33.702Z"}
+{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-07T12:32:08.978Z"}
+{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-07T12:32:10.913Z"}
+{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-07T12:33:06.510Z"}
+{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-07T12:33:08.483Z"}
+{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-07T12:51:40.034Z"}
+{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-07T12:51:42.272Z"}
+{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-07T12:53:14.379Z"}
+{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-07T12:53:17.650Z"}
+{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-07T12:54:04.230Z"}
+{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-07T12:54:05.851Z"}
+{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-07T12:54:29.135Z"}
+{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-07T12:54:30.937Z"}
+{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-07T12:55:35.122Z"}
+{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-07T12:55:37.011Z"}
+{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-07T12:58:10.900Z"}
+{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-07T12:58:15.111Z"}
+{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-07T12:58:35.645Z"}
+{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-07T12:58:37.573Z"}
+{"level":"info","message":"Identity service running on port 3001","service":"identity-service","timestamp":"2025-03-07T12:59:09.390Z"}
+{"level":"info","message":"Connected to mongoDB","service":"identity-service","timestamp":"2025-03-07T12:59:11.107Z"}

@@ -7,13 +7,13 @@ const logger = require("../utils/logger");
 const router = express.Router();
 
 const upload = multer({
-    storage: multer.memoryStorage,
+    storage: multer.memoryStorage(),
     limits: {
-        fileSize: 5 * 1024 * 1024
-    }
+        fileSize: 5 * 1024 * 1024,
+    },
 }).single("file");
 
-router.post("/upload", authenticateRequest, (req, res, next) => {
+router.post("/upload",authenticateRequest, (req, res, next) => {
     upload(req, res, function (err) {
         if (err instanceof multer.MulterError) {
             logger.error("Multer error while media uploading", err);
@@ -40,5 +40,7 @@ router.post("/upload", authenticateRequest, (req, res, next) => {
         next();
     });
 },uploadMedia);
+
+// router.get("/get", authenticateRequest, getAllMedias);
 
 module.exports = router;

@@ -56,7 +56,7 @@ const proxyOptions = {
 };
 
 app.use("/v1/auth", proxy(process.env.IDENTITY_SERVICE_URL, {
-    ...proxyOptions, 
+    ...proxyOptions,
     proxyReqOptDecorator: (proxyReqOpts, srcReq) => {
         proxyReqOpts.headers["Content-Type"] = "application/json";
         return proxyReqOpts;
@@ -67,7 +67,7 @@ app.use("/v1/auth", proxy(process.env.IDENTITY_SERVICE_URL, {
     }
 }));
 
-app.use("/v1/posts",validateToken,proxy(process.env.POST_SERVICE_URL,{
+app.use("/v1/posts", validateToken, proxy(process.env.POST_SERVICE_URL, {
     ...proxyOptions,
     proxyReqOptDecorator: (proxyReqOpts, srcReq) => {
         proxyReqOpts.headers["Content-Type"] = "application/json";
@@ -78,7 +78,24 @@ app.use("/v1/posts",validateToken,proxy(process.env.POST_SERVICE_URL,{
         logger.info(`Response received from Identity service: ${proxyRes.statusCode}`);
         return proxyResData;
     }
-    
+
+}));
+
+app.use("/v1/media", validateToken, proxy(process.env.MEDIA_SERVICE_URL, {
+    ...proxyOptions,
+    proxyReqOptDecorator: (proxyReqOpts, srcReq) => {
+        proxyReqOpts.headers["x-user-id"] = srcReq.user.userId;
+        if (!srcReq.headers["content-type"].startsWith("multipart/form-data")) {
+            proxyReqOpts.headers["Content-Type"] = "application/json";
+        }
+
+        return proxyReqOpts;
+    },
+    userResDecorator: (proxyRes, proxyResData, userReq, userRes) => {
+        logger.info(`Response received from Media service: ${proxyRes.statusCode}`);
+        return proxyResData;
+    },
+    parseReqBody : false,
 }));
 
 app.use(errorHandler);
@@ -87,6 +104,7 @@ app.listen(PORT, () => {
     logger.info(`API GATEWAY is running on port ${PORT}`);
     logger.info(`Identity service is running on port ${process.env.IDENTITY_SERVICE_URL}`);
     logger.info(`Post service is running on port ${process.env.POST_SERVICE_URL}`);
+    logger.info(`Media service is running on port ${process.env.MEDIA_SERVICE_URL}`);
     logger.info(`Redis Url ${process.env.REDIS_URL}`);
 });
 

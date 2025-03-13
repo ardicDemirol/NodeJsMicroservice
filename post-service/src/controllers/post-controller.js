@@ -1,16 +1,9 @@
 const Post = require("../models/Post");
+const { post } = require("../routes/post-routes");
 const logger = require("../utils/logger");
+const { publishEvent } = require("../utils/rabbitmq");
 const { validateCreatePost } = require("../utils/validation");
 
-async function invalidPostCache(req,input) {
-    const cachedKey = `post:${input}`;
-    await req.redisClient.del(cachedKey);
-
-    const keys = await req.redisClient.keys("posts:*");
-    if(keys.length > 0){
-        await req.redisClient.del(keys);
-    }
-};
 
 const createPost = async (req, res) => {
     logger.info("Create post endpoint hit");
@@ -32,7 +25,7 @@ const createPost = async (req, res) => {
         });
 
         await newCreatedPost.save();
-        await invalidPostCache(req,newCreatedPost._id.toString());
+        await invalidPostCache(req, newCreatedPost._id.toString());
         logger.info("Post created successfully", newCreatedPost);
         res.status(201).json({
             success: true,
@@ -48,7 +41,6 @@ const createPost = async (req, res) => {
     }
 };
 
-
 const getAllPosts = async (req, res) => {
     try {
         const page = parseInt(req.query.page) || 1;
@@ -57,12 +49,12 @@ const getAllPosts = async (req, res) => {
 
         const cacheKey = `posts:${page}:${limit}`;
         const cachedPosts = await req.redisClient.get(cacheKey);
-        if(cachedPosts) {
+        if (cachedPosts) {
             return res.json(JSON.parse(cachedPosts));
         }
 
         const posts = await Post.find({})
-            .sort({createdAt : -1})
+            .sort({ createdAt: -1 })
             .skip(startIndex)
             .limit(limit);
 
@@ -70,12 +62,12 @@ const getAllPosts = async (req, res) => {
 
         const result = {
             posts,
-            currentPage : page,
-            totalPages : Math.ceil(totalNumberOfPosts/limit),
-            totalPosts : totalNumberOfPosts
+            currentPage: page,
+            totalPages: Math.ceil(totalNumberOfPosts / limit),
+            totalPosts: totalNumberOfPosts
         };
 
-        await req.redisClient.setex(cacheKey,300,JSON.stringify(result));
+        await req.redisClient.setex(cacheKey, 300, JSON.stringify(result));
 
         res.json(result);
 
@@ -93,20 +85,20 @@ const getPost = async (req, res) => {
         const postId = req.params.id;
         const cacheKey = `post:${postId}`;
         const cachedPost = await req.redisClient.get(cacheKey);
-        if(cachedPost) {
+        if (cachedPost) {
             return res.json(JSON.parse(cachedPost));
         }
 
         const postById = await Post.findById(postId);
-        if(!postById){
+        if (!postById) {
             return res.status(404).json({
-                success:false,
+                success: false,
                 message: "Post not found"
             });
         }
 
-        await req.redisClient.setex(cachedPost,3600,JSON.stringify(postById));
-        
+        await req.redisClient.setex(cachedPost, 3600, JSON.stringify(postById));
+
         res.json(postById);
 
     } catch (e) {
@@ -118,25 +110,30 @@ const getPost = async (req, res) => {
     }
 };
 
-
 const deletePost = async (req, res) => {
     try {
         const post = await Post.findOneAndDelete({
-            _id:req.params.id,
-            user : req.user.userId
+            _id: req.params.id,
+            user: req.user.userId
         });
 
-        if(!post){
+        if (!post) {
             return res.status(404).json({
-                success:false,
+                success: false,
                 message: "Post not found"
             });
         }
 
-        await invalidPostCache(req,req.params.id);
+        await publishEvent("post.deleted", {
+            postId: post._id.toString(),
+            userId: req.user.userId,
+            mediaIds: post.mediaIds
+        });
+
+        await invalidPostCache(req, req.params.id);
         res.json({
-            success : true,
-            message : "Successfully deleted"
+            success: true,
+            message: "Successfully deleted"
         });
 
 
@@ -146,6 +143,18 @@ const deletePost = async (req, res) => {
             success: false,
             message: "Error deleting post",
         });
+    }
+};
+
+
+
+async function invalidPostCache(req, input) {
+    const cachedKey = `post:${input}`;
+    await req.redisClient.del(cachedKey);
+
+    const keys = await req.redisClient.keys("posts:*");
+    if (keys.length > 0) {
+        await req.redisClient.del(keys);
     }
 };
 

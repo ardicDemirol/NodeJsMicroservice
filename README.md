@@ -5,6 +5,7 @@
 ## Table of Contents
 - [Features](#features)
 - [Technologies Used](#technologies-used)
+- [Docker Images](#docker-images)
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
 - [License](#license)
@@ -27,6 +28,14 @@ The project leverages the following technologies:
 - **Winston**: Logging library for application monitoring.
 - **Multer**: Middleware for handling file uploads.
 - **Docker & Docker-compose**: For containerizing and managing services.
+
+## Docker Images
+This project provides pre-built Docker images for the microservices, hosted on Docker Hub:
+
+- [API Gateway](https://hub.docker.com/repository/docker/ardicdemirol/social-media-microservice-infra-api-gateway/general)
+- [Identity Service](https://hub.docker.com/repository/docker/ardicdemirol/social-media-microservice-infra-identity-service/general)
+- [Media Service](https://hub.docker.com/repository/docker/ardicdemirol/social-media-microservice-infra-media-service/general)
+- [Post Service](https://hub.docker.com/repository/docker/ardicdemirol/social-media-microservice-infra-post-service/general)
 
 ## Getting Started
 1. Clone the repository:
